@@ -18,7 +18,7 @@ def say_hello(name: str) -> str:
 
 def create_agent():
     """Create and return the ReAct agent executor."""
-    model = ChatOpenAI(temperature=0)
+    model = ChatOpenAI(model="gpt-4o-mini", temperature=0)
     tools = [calculator, say_hello]
     agent_executor = create_react_agent(model, tools)
     return agent_executor

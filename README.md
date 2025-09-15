@@ -4,10 +4,10 @@ This project demonstrates a simple LangChain ReAct agent that can be used from t
 
 ## Setup
 
-Provide your OpenAI API key via a `.env` file in the project root:
+Provide your Hugging Face Hub API token via a `.env` file in the project root:
 
 ```bash
-OPENAI_API_KEY=your_key_here
+HUGGINGFACEHUB_API_TOKEN=your_token_here
 ```
 
 ## Command Line Interface

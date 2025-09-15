@@ -14,9 +14,10 @@ class ChatRequest(BaseModel):
 
 
 @app.post("/chat")
-async def chat(req: ChatRequest):
-    result = await agent_executor.ainvoke({"messages": [HumanMessage(content=req.message)]})
-    response = result["messages"][-1].content if "messages" in result else ""
+def chat(req: ChatRequest):
+    result = agent_executor.invoke({"messages": [HumanMessage(content=req.message)]})
+    messages = result.get("messages", [])
+    response = messages[-1].content if messages else ""
     return {"response": response}
 
 
